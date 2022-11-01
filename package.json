@@ -1,0 +1,24 @@
+{
+  "name": "metamask-nodejs-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YannickRobin/metamask-nodejs-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YannickRobin/metamask-nodejs-app/issues"
+  },
+  "homepage": "https://github.com/YannickRobin/metamask-nodejs-app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ethers": "5.4.4"
+  }
+}
