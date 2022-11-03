@@ -1,6 +1,6 @@
 # metamask-nodejs-app
 
-The objective of this application is to execute 
+The objective of this application is to provide basic blockchain API to deploy on BTP and to be consumed by SAP Commerce. 
 
 ## Setup guide
 
