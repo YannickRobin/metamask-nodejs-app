@@ -34,7 +34,7 @@ curl 'http://localhost:3000/message/verify?message=To%20authenticate%20my%20acco
 ### Get transaction
 This service gets the details of the transaction. If there is no transaction, it means the transaction is invalid or not yet completed.
 ```
-curl 'http://localhost:3000/transaction/0x87e3fb9d5b56c64497918706040b005049e6759bb02b42faae61ab476ef2fb08'
+curl 'http://localhost:3000/transaction/0x87e3fb9d5b56c64497918706040b005049e6759bb02b42faae61ab476ef2fb08?provider=5'
 ```
 
 Here is an example of transaction:
@@ -69,7 +69,7 @@ Here is an example of transaction:
 ### Get transaction receipt
 This service gets the receipt of the transaction. If there is no transaction, it means the transaction is invalid or not yet completed.
 ```
-curl 'http://localhost:3000/transaction/0x87e3fb9d5b56c64497918706040b005049e6759bb02b42faae61ab476ef2fb08/receipt'
+curl 'http://localhost:3000/transaction/0x87e3fb9d5b56c64497918706040b005049e6759bb02b42faae61ab476ef2fb08/receipt?provider=5'
 ```
 
 Here is an example of transaction receipt:
