@@ -1,12 +1,17 @@
 const { ethers } = require('ethers');
+const API_KEY = "CE9F24HB4N2G6UFF2UZC5AH8DBJP96GGUC";
 
-async function sayHello() {
-  try {
-	const hello = "hello";
-	return hello;
-  } catch(error) {
-    console.log(error.message, error.stack);
-  }
+async function getEtherPrice() {
+  const provider = new ethers.providers.EtherscanProvider(1, API_KEY); //homestead mainnet
+
+  const price = await provider.getEtherPrice();
+
+  if (!price)
+    console.log('price not found');
+  else
+  console.log(price);
+
+  return price;
 }
 
 async function verifyMessage(message, address, signature) {
@@ -26,7 +31,37 @@ async function verifyMessage(message, address, signature) {
   }
 }
 
+async function getTransaction(txhash, providerCode) {
+  console.log("Get transaction " + txhash);
+  const provider = new ethers.providers.EtherscanProvider(providerCode, API_KEY);
+
+  const tx = await provider.getTransaction(txhash);
+
+  if (!tx)
+    console.log('tx not found');
+  else
+  console.log(tx);
+
+  return tx;
+}
+
+async function getTransactionReceipt(txhash, providerCode) {
+  console.log("Get transaction receipt" + txhash);
+  const provider = new ethers.providers.EtherscanProvider(providerCode, API_KEY);
+
+  const tx = await provider.getTransactionReceipt(txhash);
+
+  if (!tx)
+    console.log('tx not found');
+  else
+  console.log(tx);
+
+  return tx;
+}
+
 module.exports = {
-  sayHello,
-  verifyMessage
+  getEtherPrice,
+  verifyMessage,
+  getTransaction,
+  getTransactionReceipt
 }

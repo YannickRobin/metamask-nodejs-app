@@ -2,17 +2,40 @@ var express = require("express");
 var app = express();
 
 const {
-  sayHello,
-  verifyMessage
+  getEtherPrice,
+  verifyMessage,
+  getTransaction,
+  getTransactionReceipt
+  
 } = require('./metamaskService.js');
-
-app.get("/hello", async(req, res, next) => {
-    const hello = await sayHello();
-    res.json(hello);
-});
 
 app.get("/message/verify", async(req, res, next) => {
   const result = await verifyMessage(req.query.message, req.query.address, req.query.signature);
+  res.json(result);
+});
+
+app.get("/transaction/:txhash", async(req, res, next) => {
+  if (!req.query.provider)
+    providerCode = 1
+  else
+    providerCode = parseInt(req.query.provider);
+  
+  const result = await getTransaction(req.params.txhash, providerCode);
+  res.json(result);
+});
+
+app.get("/transaction/:txhash/receipt", async(req, res, next) => {
+  if (!req.query.provider)
+    providerCode = 1
+  else
+    providerCode = parseInt(req.query.provider);
+
+  const result = await getTransactionReceipt(req.params.txhash, providerCode);
+  res.json(result);
+});
+
+app.get("/getEtherPrice", async(req, res, next) => {
+  const result = await getEtherPrice();
   res.json(result);
 });
 
