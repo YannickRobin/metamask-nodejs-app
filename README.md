@@ -37,3 +37,4 @@ This service gets the details of the transaction. If there is no transaction, it
 ```
 curl 'http://localhost:3000/transaction/receipt?txhash=0x87e3fb9d5b56c64497918706040b005049e6759bb02b42faae61ab476ef2fb08'
 ```
+To compare with etherscan result, you can go to https://goerli.etherscan.io/tx/0x87e3fb9d5b56c64497918706040b005049e6759bb02b42faae61ab476ef2fb08.
