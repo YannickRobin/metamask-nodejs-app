@@ -4,9 +4,11 @@ The objective of this application is to provide basic blockchain API to deploy o
 
 ## Local setup
 
+- Clone repo
+- Go to **metamask-nodejs-app**
 ```
 npm install
-node .
+API_KEY=CE9F24HB4N2G6UFF2UZC5AH8DBJP96GGUC node .
 ```
 
 ## Deploy to BTP
