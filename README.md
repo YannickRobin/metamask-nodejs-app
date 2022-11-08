@@ -45,6 +45,36 @@ vi manifest.yml
 ```
 cf push
 ```
+- Wait for metamask-nodejs-app to start
+```
+Waiting for app metamask-nodejs-app to start...
+
+Instances starting...
+Instances starting...
+Instances starting...
+Instances starting...
+
+name:              metamask-nodejs-app
+requested state:   started
+routes:            metamask-nodejs-app-quiet-badger-ez.cfapps.eu20.hana.ondemand.com
+last uploaded:     Tue 08 Nov 15:21:15 +08 2022
+stack:             cflinuxfs3
+buildpacks:
+	name               version   detect output   buildpack name
+	nodejs_buildpack   1.7.73    nodejs          nodejs
+
+type:            web
+sidecars:
+instances:       1/1
+memory usage:    128M
+start command:   npm start
+     state     since                  cpu    memory   disk     logging      details
+#0   running   2022-11-08T07:21:31Z   0.0%   0 of 0   0 of 0   0/s of 0/s
+```
+- Go the the route indicated into the logs
+```
+curl 'https://metamask-nodejs-app-quiet-badger-ez.cfapps.eu20.hana.ondemand.com/getEtherPrice'
+```
 
 ## API
 
