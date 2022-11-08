@@ -73,6 +73,10 @@ start command:   npm start
      state     since                  cpu    memory   disk     logging      details
 #0   running   2022-11-08T07:21:31Z   0.0%   0 of 0   0 of 0   0/s of 0/s
 ```
+- Set environment variable
+```
+cf set-env metamask-nodejs-app API_KEY 1234
+```
 - Go the the route indicated into the logs
 ```
 curl 'https://metamask-nodejs-app-quiet-badger-ez.cfapps.eu20.hana.ondemand.com/getEtherPrice'
