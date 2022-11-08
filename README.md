@@ -75,7 +75,11 @@ start command:   npm start
 ```
 - Set environment variable
 ```
-cf set-env metamask-nodejs-app API_KEY 1234
+cf set-env metamask-nodejs-app API_KEY CE9F24HB4N2G6UFF2UZC5AH8DBJP96GGUC
+```
+- Restart **metamask-nodejs-app**
+```
+cf restart metamask-nodejs-app
 ```
 - Go the the route indicated into the logs
 ```
