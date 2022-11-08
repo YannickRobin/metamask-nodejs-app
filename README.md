@@ -2,11 +2,35 @@
 
 The objective of this application is to provide basic blockchain API to deploy on BTP and to be consumed by SAP Commerce. 
 
-## Setup guide
+## Local setup
 
 ```
 npm install
 node .
+```
+
+## Deploy to BTP
+
+- Login to BTP
+```
+cf api https://api.cf.eu20.hana.ondemand.com
+cf login --sso
+```
+- Select your target organisation and space
+```
+Select an org:
+1. dbs-cx-services_cx-boosters-41n7uah4
+
+Org (enter to skip): 1
+Targeted org dbs-cx-services_cx-boosters-41n7uah4.
+
+Targeted space dev.
+
+API endpoint:   https://api.cf.eu20.hana.ondemand.com
+API version:    3.124.0
+user:           yannick.robin@sap.com
+org:            dbs-cx-services_cx-boosters-41n7uah4
+space:          dev
 ```
 
 ## API
