@@ -1,8 +1,7 @@
 ---
 applications:
 - name: metamask-nodejs-app
-  routes:
-    - route: node-41n7uah4.cfapps.eu20.hana.ondemand.com
+  random-route: true
   path: .
   memory: 128M
   buildpack: nodejs_buildpack

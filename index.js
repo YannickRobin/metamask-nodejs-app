@@ -9,6 +9,10 @@ const {
   
 } = require('./metamaskService.js');
 
+app.get("/", async(req, res, next) => {
+  res.json("OK");
+});
+
 app.get("/message/verify", async(req, res, next) => {
   const result = await verifyMessage(req.query.message, req.query.address, req.query.signature);
   res.json(result);
