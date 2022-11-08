@@ -11,6 +11,11 @@ node .
 
 ## Deploy to BTP
 
+- Clone repo
+- Go to **metamask-nodejs-app**
+```
+cd metamask-nodejs-app
+```
 - Login to BTP
 ```
 cf api https://api.cf.eu20.hana.ondemand.com
@@ -31,6 +36,14 @@ API version:    3.124.0
 user:           yannick.robin@sap.com
 org:            dbs-cx-services_cx-boosters-41n7uah4
 space:          dev
+```
+- Verify **manifest.yml**
+```
+vi manifest.yml
+```
+- Push the application (this will create the route, deploy and start the application)
+```
+cf push
 ```
 
 ## API
