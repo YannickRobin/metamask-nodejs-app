@@ -1,8 +1,7 @@
 const { ethers } = require('ethers');
-const API_KEY = "CE9F24HB4N2G6UFF2UZC5AH8DBJP96GGUC";
 
 async function getEtherPrice() {
-  const provider = new ethers.providers.EtherscanProvider(1, API_KEY); //homestead mainnet
+  const provider = new ethers.providers.EtherscanProvider(1, process.env.API_KEY); //homestead mainnet
 
   const price = await provider.getEtherPrice();
 
@@ -33,7 +32,7 @@ async function verifyMessage(message, address, signature) {
 
 async function getTransaction(txhash, providerCode) {
   console.log("Get transaction " + txhash);
-  const provider = new ethers.providers.EtherscanProvider(providerCode, API_KEY);
+  const provider = new ethers.providers.EtherscanProvider(providerCode, process.env.API_KEY);
 
   const tx = await provider.getTransaction(txhash);
 
@@ -47,7 +46,7 @@ async function getTransaction(txhash, providerCode) {
 
 async function getTransactionReceipt(txhash, providerCode) {
   console.log("Get transaction receipt" + txhash);
-  const provider = new ethers.providers.EtherscanProvider(providerCode, API_KEY);
+  const provider = new ethers.providers.EtherscanProvider(providerCode, process.env.API_KEY);
 
   const tx = await provider.getTransactionReceipt(txhash);
 
