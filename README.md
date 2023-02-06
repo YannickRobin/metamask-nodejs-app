@@ -83,7 +83,7 @@ cf restart metamask-nodejs-app
 ```
 - Go the the route indicated into the logs
 ```
-curl 'https://metamask-angular-app-patient-jackal-bm.cfapps.eu10.hana.ondemand.com/getEtherPrice'
+curl 'https://metamask-nodejs-app-quiet-mouse-ig.cfapps.eu10.hana.ondemand.com/getEtherPrice'
 ```
 
 ## API
