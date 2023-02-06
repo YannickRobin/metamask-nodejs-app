@@ -85,6 +85,8 @@ cf restart metamask-nodejs-app
 ```
 curl 'https://metamask-nodejs-app-quiet-mouse-ig.cfapps.eu10.hana.ondemand.com/getEtherPrice'
 ```
+<img width="513" alt="EBC France" src="https://user-images.githubusercontent.com/1722742/216993643-3b9a3b9f-9ca6-4e12-a373-39a377ca9cfb.png">
+<img width="491" alt="MetaMask App" src="https://user-images.githubusercontent.com/1722742/216993713-a6c86225-d8cc-4633-a8fb-65cf8ad6aa2e.png">
 
 ## API
 
