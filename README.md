@@ -20,24 +20,24 @@ cd metamask-nodejs-app
 ```
 - Login to BTP
 ```
-cf api https://api.cf.eu20.hana.ondemand.com
+cf api https://api.cf.eu10.hana.ondemand.com
 cf login --sso
 ```
 - Select your target organisation and space
 ```
 Select an org:
-1. dbs-cx-services_cx-boosters-41n7uah4
+1. EBC France Demo_ebcfrancecf
 
 Org (enter to skip): 1
-Targeted org dbs-cx-services_cx-boosters-41n7uah4.
+Targeted org EBC France Demo_ebcfrancecf.
 
 Targeted space dev.
 
-API endpoint:   https://api.cf.eu20.hana.ondemand.com
+API endpoint:   https://api.cf.eu10.hana.ondemand.com
 API version:    3.124.0
 user:           yannick.robin@sap.com
-org:            dbs-cx-services_cx-boosters-41n7uah4
-space:          dev
+org:            EBC France Demo_ebcfrancecf
+space:          EBC Space
 ```
 - Verify **manifest.yml**
 ```
@@ -58,7 +58,7 @@ Instances starting...
 
 name:              metamask-nodejs-app
 requested state:   started
-routes:            metamask-nodejs-app-quiet-badger-ez.cfapps.eu20.hana.ondemand.com
+routes:            metamask-angular-app-patient-jackal-bm.cfapps.eu10.hana.ondemand.com
 last uploaded:     Tue 08 Nov 15:21:15 +08 2022
 stack:             cflinuxfs3
 buildpacks:
@@ -83,7 +83,7 @@ cf restart metamask-nodejs-app
 ```
 - Go the the route indicated into the logs
 ```
-curl 'https://metamask-nodejs-app-quiet-badger-ez.cfapps.eu20.hana.ondemand.com/getEtherPrice'
+curl 'https://metamask-angular-app-patient-jackal-bm.cfapps.eu10.hana.ondemand.com/getEtherPrice'
 ```
 
 ## API
