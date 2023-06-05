@@ -1,14 +1,15 @@
-const { ethers } = require('ethers');
+const { ethers } = require("ethers");
 
 async function getEtherPrice() {
-  const provider = new ethers.providers.EtherscanProvider(1, process.env.API_KEY); //homestead mainnet
+  const provider = new ethers.providers.EtherscanProvider(
+    1,
+    process.env.API_KEY
+  ); //homestead mainnet
 
   const price = await provider.getEtherPrice();
 
-  if (!price)
-    console.log('price not found');
-  else
-  console.log(price);
+  if (!price) console.log("price not found");
+  else console.log(price);
 
   return price;
 }
@@ -32,28 +33,34 @@ async function verifyMessage(message, address, signature) {
 
 async function getTransaction(txhash, providerCode) {
   console.log("Get transaction: " + txhash);
-  const provider = new ethers.providers.EtherscanProvider(providerCode, process.env.API_KEY);
+  const provider = new ethers.providers.EtherscanProvider(
+    providerCode,
+    process.env.API_KEY
+  );
 
   const tx = await provider.getTransaction(txhash);
 
-  if (!tx)
-    console.log('tx not found');
-  else
-  console.log(tx);
+  if (!tx) console.log("tx not found");
+  else console.log(tx);
 
   return tx;
 }
 
 async function getTransactionReceipt(txhash, providerCode) {
   console.log("Get transaction receipt: " + txhash);
-  const provider = new ethers.providers.EtherscanProvider(providerCode, process.env.API_KEY);
+  const provider = new ethers.providers.EtherscanProvider(
+    providerCode,
+    process.env.API_KEY
+  );
 
   const tx = await provider.getTransactionReceipt(txhash);
 
-  if (!tx)
-    console.log('tx not found');
-  else
-  console.log(tx);
+  tx.gasUsed = undefined;
+  tx.cumulativeGasUsed = undefined;
+  tx.effectiveGasPrice = undefined;
+
+  if (!tx) console.log("tx not found");
+  else console.log(tx);
 
   return tx;
 }
@@ -62,5 +69,5 @@ module.exports = {
   getEtherPrice,
   verifyMessage,
   getTransaction,
-  getTransactionReceipt
-}
+  getTransactionReceipt,
+};
