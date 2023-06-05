@@ -31,7 +31,7 @@ async function verifyMessage(message, address, signature) {
 }
 
 async function getTransaction(txhash, providerCode) {
-  console.log("Get transaction " + txhash);
+  console.log("Get transaction: " + txhash);
   const provider = new ethers.providers.EtherscanProvider(providerCode, process.env.API_KEY);
 
   const tx = await provider.getTransaction(txhash);
@@ -45,7 +45,7 @@ async function getTransaction(txhash, providerCode) {
 }
 
 async function getTransactionReceipt(txhash, providerCode) {
-  console.log("Get transaction receipt" + txhash);
+  console.log("Get transaction receipt: " + txhash);
   const provider = new ethers.providers.EtherscanProvider(providerCode, process.env.API_KEY);
 
   const tx = await provider.getTransactionReceipt(txhash);
