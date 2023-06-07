@@ -53,14 +53,20 @@ async function getTransactionReceipt(txhash, providerCode) {
     process.env.API_KEY
   );
 
-  const tx = await provider.getTransactionReceipt(txhash);
+  let tx = await provider.getTransactionReceipt(txhash);
 
-  tx.gasUsed = undefined;
-  tx.cumulativeGasUsed = undefined;
-  tx.effectiveGasPrice = undefined;
-
-  if (!tx) console.log("tx not found");
-  else console.log(tx);
+  if (!tx) {
+    console.log("tx not found");
+    tx = {
+      transactionHash: txhash,
+      status: -1,
+    };
+  } else {
+    console.log(tx);
+    tx.gasUsed = tx.gasUsed.toNumber();
+    tx.cumulativeGasUsed = tx.cumulativeGasUsed.toNumber();
+    tx.effectiveGasPrice = tx.effectiveGasPrice.toNumber();
+  }
 
   return tx;
 }
